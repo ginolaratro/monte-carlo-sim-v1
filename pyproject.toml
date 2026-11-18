@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nasdaq-monte-carlo"
+version = "0.1.0"
+description = "Explore possible Nasdaq 100 paths with a Monte Carlo simulation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "matplotlib>=3.7", "yfinance>=0.2.40"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "jupyter>=1"]
+
+[project.scripts]
+nasdaq-monte-carlo = "monte_carlo.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
